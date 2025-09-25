@@ -40,7 +40,7 @@ header .logo {
 aside {
     width: 220px;
     background: #f5f5f5;
-    border-right: 1px solid #ccc;
+    border-right: 1px solid #ddd;
     padding: 2rem 1rem;
     overflow-y: auto;
     transition: width 0.3s ease;
@@ -75,12 +75,12 @@ aside li {
     margin-bottom: 0.5rem;
     cursor: pointer;
     transition: all 0.2s;
+    border-radius: 4px;
 }
 
 aside li:hover {
-    background: #000;
+    background: #111;
     color: #fff;
-    border-radius: 4px;
 }
 
 /* ------------------- Main Editor Area ------------------- */
@@ -95,14 +95,19 @@ main {
 
 /* ------------------- Editor ------------------- */
 .editor {
-    position: relative; /* for floating toolbar */
+    position: relative;
     width: 100%;
     max-width: 800px;
     border: 1px solid #111;
-    border-radius: 6px;
-    padding: 2rem 1.5rem 1.5rem 1.5rem; /* extra top padding for toolbar */
+    border-radius: 8px;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
     background: #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.editor:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
 /* ------------------- Editor Toolbar ------------------- */
@@ -139,7 +144,7 @@ main {
     right: 10px;
 }
 
-/* ------------------- Editor Text ------------------- */
+/* Editor Text */
 .editor h2 {
     font-weight: 700;
     border-bottom: 1px solid #111;
