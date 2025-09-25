@@ -9,12 +9,13 @@
 <body>
     <!-- Header -->
     <header>
-        <h1>LawBandit Notes</h1>
+        <h1>LawBandit</h1>
     </header>
 
     <div class="container">
         <!-- Sidebar -->
-        <aside>
+        <aside id="sidebar">
+            <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
             <h2>Notebooks</h2>
             <ul>
                 <li>Contracts</li>
@@ -37,11 +38,16 @@
                     <button title="Align Center">↔️</button>
                     <button title="Align Right">⇨</button>
                 </div>
-
                 <h2>Start Your Notes</h2>
                 <p>Type your notes here...</p>
             </section>
         </main>
     </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+        }
+    </script>
 </body>
 </html>
