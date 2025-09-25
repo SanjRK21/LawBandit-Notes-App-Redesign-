@@ -1,167 +1,108 @@
-/* ------------------- General Styles ------------------- */
+/* General Layout */
 body {
-    margin: 0;
-    font-family: "Georgia", serif;
-    background: #fff;
-    color: #111;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  height: 100vh;
+  background: #fff;
+  color: #111;
 }
 
-/* ------------------- Header ------------------- */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    background: #000;
-    color: #fff;
-    padding: 1rem 2rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    position: relative;
-    z-index: 100;
-}
-
-header .logo {
-    height: 40px;
-}
-
-/* ------------------- Container ------------------- */
-.container {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
-}
-
-/* ------------------- Sidebar ------------------- */
+/* Sidebar */
 aside {
-    width: 220px;
-    background: #f5f5f5;
-    border-right: 1px solid #ddd;
-    padding: 2rem 1rem;
-    overflow-y: auto;
-    transition: width 0.3s ease;
-    position: relative;
-}
-
-aside.collapsed {
-    width: 50px;
-}
-
-.sidebar-toggle {
-    display: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+  width: 220px;
+  background: #f5f5f5;
+  border-right: 1px solid #ddd;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 aside h2 {
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 aside ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 aside li {
-    padding: 0.4rem 0.6rem;
-    margin-bottom: 0.5rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    border-radius: 4px;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
 }
 
 aside li:hover {
-    background: #111;
-    color: #fff;
+  background: #111;
+  color: #fff;
 }
 
-/* ------------------- Main Editor Area ------------------- */
+/* Main Layout */
 main {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 2rem;
-    overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-/* ------------------- Editor ------------------- */
+/* Top Header Bar */
+header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #000;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+}
+
+.logo {
+  height: 32px;
+}
+
+.note-title {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  flex: 1;
+}
+
+.note-title:focus {
+  outline: none;
+  border-bottom: 1px solid #fff;
+}
+
+/* Toolbar */
+.toolbar {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.toolbar button, .toolbar select, .toolbar input[type="color"] {
+  padding: 0.4rem;
+  border: none;
+  border-radius: 4px;
+  background: #fff;
+  color: #111;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.toolbar button:hover, .toolbar select:hover {
+  background: #ddd;
+}
+
+/* Editor */
 .editor {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    border: 1px solid #111;
-    border-radius: 8px;
-    padding: 2rem 1.5rem 1.5rem 1.5rem;
-    background: #fff;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    transition: box-shadow 0.3s ease;
-}
-
-.editor:hover {
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
-
-/* ------------------- Editor Toolbar ------------------- */
-.editor-toolbar {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.editor-toolbar button {
-    width: 2.5rem;
-    height: 2.5rem;
-    border: 1px solid #111;
-    border-radius: 6px;
-    background: #fff;
-    color: #111;
-    font-size: 1.2rem;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
-}
-
-.editor-toolbar button:hover {
-    background: #111;
-    color: #fff;
-}
-
-/* Toolbar positioned in top-right corner */
-.editor-toolbar.top-right {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-/* Editor Text */
-.editor h2 {
-    font-weight: 700;
-    border-bottom: 1px solid #111;
-    padding-bottom: 0.3rem;
-    margin-bottom: 1rem;
-}
-
-.editor p {
-    line-height: 1.6;
-}
-
-/* ------------------- Responsive ------------------- */
-@media (max-width: 768px) {
-    .sidebar-toggle {
-        display: block;
-    }
-    aside h2, aside ul {
-        display: none;
-    }
+  flex: 1;
+  padding: 2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  overflow-y: auto;
 }
