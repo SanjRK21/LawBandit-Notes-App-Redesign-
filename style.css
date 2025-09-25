@@ -1,125 +1,118 @@
-/* General styles */
+/* General Styles */
 body {
-  margin: 0;
-  font-family: "Georgia", "Times New Roman", serif;
-  background-color: #fff; /* white background */
-  color: #111; /* dark text */
-  display: flex;
-  height: 100vh;
+    margin: 0;
+    font-family: "Georgia", serif;
+    background: #fff;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
-/* Header bar */
+/* Header */
 header {
-  background: #000; /* black header */
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-  font-size: 1.6rem;
-  font-weight: 700;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    background: #000;
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-/* Container for sidebar + main */
+/* Container */
 .container {
-  display: flex;
-  flex: 1;
-  margin-top: 70px; /* space for fixed header */
+    display: flex;
+    flex: 1;
+    overflow: hidden;
 }
 
 /* Sidebar */
 aside {
-  width: 220px;
-  background: #f5f5f5; /* subtle gray */
-  border-right: 1px solid #ccc;
-  padding: 1.5rem;
-  height: calc(100vh - 70px);
-  overflow-y: auto;
+    width: 200px;
+    background: #f5f5f5;
+    border-right: 1px solid #ccc;
+    padding: 2rem 1rem;
+    overflow-y: auto;
 }
 
 aside h2 {
-  font-family: "Georgia", serif;
-  font-weight: 600;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
 }
 
 aside ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 aside li {
-  margin-bottom: 0.5rem;
-  cursor: pointer;
-  padding: 0.3rem 0.5rem;
-  transition: background 0.2s;
+    padding: 0.4rem 0.6rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
 aside li:hover {
-  background: #000;
-  color: #fff;
-  border-radius: 4px;
+    background: #000;
+    color: #fff;
+    border-radius: 4px;
 }
 
 /* Main editor area */
 main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  overflow-y: auto;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    overflow-y: auto;
 }
 
-/* Toolbar */
-.toolbar {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.toolbar button {
-  padding: 0.4rem 0.8rem;
-  border: 1px solid #111;
-  border-radius: 4px;
-  background: #fff;
-  color: #111;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.2s;
-}
-
-.toolbar button:hover {
-  background: #111;
-  color: #fff;
-}
-
-/* Editor Area */
+/* Editor */
 .editor {
-  flex: 1;
-  border: 1px solid #111;
-  border-radius: 6px;
-  padding: 1rem;
-  font-size: 1rem;
-  background: #fff;
-  color: #111;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  overflow-y: auto;
+    width: 100%;
+    max-width: 800px; /* centered focus */
+    border: 1px solid #111;
+    border-radius: 6px;
+    padding: 1.5rem;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
+/* Editor Toolbar */
+.editor-toolbar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.editor-toolbar button {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #111;
+    border-radius: 4px;
+    background: #fff;
+    color: #111;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.editor-toolbar button:hover {
+    background: #111;
+    color: #fff;
+}
+
+/* Editor text */
 .editor h2 {
-  font-family: "Georgia", serif;
-  font-weight: 700;
-  border-bottom: 1px solid #111;
-  padding-bottom: 0.3rem;
-  margin-bottom: 1rem;
+    font-weight: 700;
+    border-bottom: 1px solid #111;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
 }
 
 .editor p {
-  line-height: 1.6;
+    line-height: 1.6;
 }
