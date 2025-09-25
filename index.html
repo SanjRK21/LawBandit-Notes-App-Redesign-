@@ -1,54 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LawBandit Notes</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LawBandit Notes</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
+  <!-- Sidebar -->
+  <aside>
+    <h2>Notebooks</h2>
+    <ul>
+      <li>Contracts</li>
+      <li>Torts</li>
+      <li>Property</li>
+      <li>Constitutional</li>
+    </ul>
+  </aside>
+
+  <!-- Main Area -->
+  <main>
+    <!-- Top Bar -->
     <header>
-    <img src="logo.png" alt="LawBandit Logo" class="logo">
-    <h1>LawBandit</h1>
-</header>
+      <img src="lawbandit-logo.png" alt="LawBandit Logo" class="logo">
+      <input type="text" value="Untitled Note" class="note-title" />
+      <div class="toolbar">
+        <button title="Bold"><b>B</b></button>
+        <button title="Italic"><i>I</i></button>
+        <button title="Underline"><u>U</u></button>
+        <select title="Format">
+          <option>Paragraph</option>
+          <option>Heading 1</option>
+          <option>Heading 2</option>
+        </select>
+        <button title="Bullet List">•</button>
+        <button title="Numbered List">1.</button>
+        <input type="color" title="Text Color" />
+        <button title="Download">&#8681;</button>
+      </div>
+    </header>
 
-<div class="container">
-    <!-- Sidebar -->
-    <aside id="sidebar">
-        <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
-        <h2>Notebooks</h2>
-        <ul>
-            <li>Contracts</li>
-            <li>Torts</li>
-            <li>Property</li>
-            <li>Constitutional</li>
-        </ul>
-    </aside>
-
-    <!-- Main Content -->
-    <main>
-        <!-- Editor Area -->
-        <section class="editor" contenteditable="true">
-            <div class="editor-toolbar top-right">
-                <button title="Bold"><b>𝐁</b></button>
-                <button title="Italic"><i>𝐼</i></button>
-                <button title="Underline"><u>U</u></button>
-                <button title="Bullet List">•</button>
-                <button title="Numbered List">1.</button>
-                <button title="Align Center">↔️</button>
-                <button title="Align Right">⇨</button>
-            </div>
-            <h2>Start Your Notes</h2>
-            <p>Type your notes here...</p>
-        </section>
-    </main>
-</div>
-
-    <script>
-        function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('collapsed');
-        }
-    </script>
+    <!-- Editable Note Area -->
+    <section class="editor" contenteditable="true"></section>
+  </main>
 </body>
 </html>
