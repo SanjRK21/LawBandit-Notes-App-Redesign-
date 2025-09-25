@@ -1,4 +1,4 @@
-/* General Styles */
+/* ------------------- General Styles ------------------- */
 body {
     margin: 0;
     font-family: "Georgia", serif;
@@ -9,25 +9,34 @@ body {
     height: 100vh;
 }
 
-/* Header */
+/* ------------------- Header ------------------- */
 header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
     background: #000;
     color: #fff;
     padding: 1rem 2rem;
     font-size: 1.5rem;
     font-weight: bold;
-    text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 100;
 }
 
-/* Container */
+header .logo {
+    height: 40px;
+}
+
+/* ------------------- Container ------------------- */
 .container {
     display: flex;
     flex: 1;
     overflow: hidden;
 }
 
-/* Sidebar */
+/* ------------------- Sidebar ------------------- */
 aside {
     width: 220px;
     background: #f5f5f5;
@@ -35,6 +44,7 @@ aside {
     padding: 2rem 1rem;
     overflow-y: auto;
     transition: width 0.3s ease;
+    position: relative;
 }
 
 aside.collapsed {
@@ -73,7 +83,7 @@ aside li:hover {
     border-radius: 4px;
 }
 
-/* Main editor area */
+/* ------------------- Main Editor Area ------------------- */
 main {
     flex: 1;
     display: flex;
@@ -83,22 +93,22 @@ main {
     overflow-y: auto;
 }
 
-/* Editor */
+/* ------------------- Editor ------------------- */
 .editor {
+    position: relative; /* for floating toolbar */
     width: 100%;
-    max-width: 800px; /* centered focus */
+    max-width: 800px;
     border: 1px solid #111;
     border-radius: 6px;
-    padding: 1.5rem;
+    padding: 2rem 1.5rem 1.5rem 1.5rem; /* extra top padding for toolbar */
     background: #fff;
     box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 
-/* Toolbar */
+/* ------------------- Editor Toolbar ------------------- */
 .editor-toolbar {
     display: flex;
     gap: 0.5rem;
-    margin-bottom: 1rem;
 }
 
 .editor-toolbar button {
@@ -122,7 +132,14 @@ main {
     color: #fff;
 }
 
-/* Editor text */
+/* Toolbar positioned in top-right corner */
+.editor-toolbar.top-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+/* ------------------- Editor Text ------------------- */
 .editor h2 {
     font-weight: 700;
     border-bottom: 1px solid #111;
@@ -134,7 +151,7 @@ main {
     line-height: 1.6;
 }
 
-/* Responsive Sidebar Toggle */
+/* ------------------- Responsive ------------------- */
 @media (max-width: 768px) {
     .sidebar-toggle {
         display: block;
