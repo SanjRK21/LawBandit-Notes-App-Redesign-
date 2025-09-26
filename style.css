@@ -1,68 +1,72 @@
-/* ===== Global Reset ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* ===== Global Styles ===== */
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f9fafb;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #f7f7f7;
   color: #111;
-  height: 100vh;
   display: flex;
-  overflow: hidden;
+  height: 100vh;
 }
 
-/* ===== Sidebar ===== */
-.sidebar {
-  width: 240px;
-  background: #111;
-  color: #fff;
+/* ===== Sidebar (Recent Notes) ===== */
+aside {
+  width: 220px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  transition: width 0.3s ease;
 }
 
-.sidebar h2 {
-  font-size: 1rem;
+aside h2 {
+  font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #aaa;
+  color: #111;
 }
 
-.sidebar ul {
+aside ul {
   list-style: none;
+  padding: 0;
 }
 
-.sidebar ul li {
+aside li {
   padding: 0.6rem 0.8rem;
   margin-bottom: 0.4rem;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
   transition: background 0.2s ease;
 }
 
-.sidebar ul li:hover {
-  background: rgba(255, 255, 255, 0.1);
+aside li:hover {
+  background: #f0f0f0;
 }
 
-/* ===== Main Container ===== */
-.main {
+.note-title {
+  font-weight: 500;
+}
+
+.note-time {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* ===== Main Editor Area ===== */
+main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  height: 100vh;
 }
 
-/* ===== Top Bar ===== */
-.topbar {
+/* ===== Top Toolbar ===== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
   background: #fff;
   border-bottom: 1px solid #ddd;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.6rem 1rem;
 }
 
 .logo {
@@ -71,64 +75,69 @@ body {
   color: #111;
 }
 
-.toolbar {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-/* Group for text tools */
-.text-tools {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  display: flex;
-  padding: 0.3rem 0.6rem;
-  gap: 0.5rem;
-  background: #fdfdfd;
-}
-
-.text-tools button {
-  background: none;
+.note-title-input {
   border: none;
   font-size: 1rem;
-  cursor: pointer;
-  padding: 0.3rem;
-  transition: background 0.2s ease;
+  font-weight: 500;
+  width: 200px;
+  margin-left: 1rem;
 }
 
-.text-tools button:hover {
-  background: #eee;
+.toolbar {
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* Text Tool Group */
+.text-tools {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.text-tools button,
+.text-tools select,
+.text-tools input[type="color"] {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.text-tools button:hover,
+.text-tools select:hover {
+  background: #f0f0f0;
   border-radius: 4px;
 }
 
-/* Group for note actions */
+/* Action Group */
 .note-actions {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
+  margin-left: 1rem;
 }
 
 .note-actions button {
   background: none;
   border: 1px solid #ddd;
-  padding: 0.4rem 0.7rem;
+  padding: 0.4rem 0.6rem;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease;
 }
 
 .note-actions button:hover {
   background: #111;
   color: #fff;
-  border-color: #111;
 }
 
-.note-actions .lock {
-  font-size: 1.2rem;
-}
-
-/* ===== Editor Area ===== */
+/* ===== Editor ===== */
 .editor {
   flex: 1;
   padding: 1.5rem;
@@ -136,24 +145,10 @@ body {
   background: #fff;
 }
 
-.editor[contenteditable="true"]:focus {
+.editor:focus {
   outline: none;
 }
 
-.editor h1,
-.editor h2,
 .editor p {
   margin-bottom: 1rem;
-}
-
-/* ===== Scrollbar Styling ===== */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 8px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #aaa;
 }
