@@ -58,26 +58,6 @@ header {
   z-index: 100;
 }
 
-/* ===== Note Title ===== */
-.note-title {
-  font-size: 2rem;        /* Bigger size */
-  font-weight: 700;       /* Bold */
-  border: none;
-  background: none;
-  outline: none;
-  color: #111;
-  width: 70%;             /* Leaves room for toolbar/actions */
-  margin-left: 1rem;
-}
-
-.note-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid #ddd;
-}
-
 .logo {
   font-weight: 700;
   font-size: 1.5rem;
