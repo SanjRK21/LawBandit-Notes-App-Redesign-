@@ -60,67 +60,25 @@ header {
 
 .logo {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #111;
 }
 
 .toolbar {
   display: flex;
   gap: 0.6rem;
-  background: #f9f9f9;
-  padding: 0.4rem 0.6rem;
-  border-radius: 12px;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
 }
 
-/* Grouped Text Tools */
-.text-tools {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.text-tools button,
-.text-tools select,
-.text-tools input[type="color"] {
+.toolbar button {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 6px;
   padding: 0.3rem 0.5rem;
-  font-size: 1rem;
   cursor: pointer;
-  transition: all 0.2s ease;
 }
 
-.text-tools button:hover,
-.text-tools select:hover,
-.text-tools input[type="color"]:hover {
-  background: #e0e0e0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transform: translateY(-1px);
-}
-
-/* Action buttons (download, lock) */
-.note-actions {
-  display: flex;
-  gap: 0.4rem;
-  margin-left: 1rem;
-}
-
-.note-actions button {
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 0.4rem 0.6rem;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  transition: all 0.2s ease;
-}
-
-.note-actions button:hover {
-  background: #111;
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.toolbar button:hover {
+  background: #e5e5e5;
 }
 
 /* ===== Main Editor Area ===== */
@@ -133,36 +91,17 @@ main {
 
 .editor {
   flex: 1;
-  padding: 2rem;
+  padding: 1.5rem;
   margin-top: 1rem;
   background: #fff;
-  border-radius: 16px;
+  border-radius: 12px;
   border: 1px solid #ddd;
   overflow-y: auto;
-  box-shadow: 8px 8px 20px rgba(0,0,0,0.03), -8px -8px 20px rgba(255,255,255,0.7);
 }
 
 .editor p {
   margin-bottom: 1rem;
   line-height: 1.6;
-}
-
-/* ===== Buttons & Icons ===== */
-button {
-  font-size: 1rem;
-  cursor: pointer;
-  background: none;
-  border: none;
-}
-
-button:focus {
-  outline: none;
-}
-
-/* ===== Hover Effects ===== */
-button:hover {
-  transform: scale(1.05);
-  transition: transform 0.2s ease;
 }
 
 /* ===== Responsive Layout ===== */
