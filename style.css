@@ -1,27 +1,27 @@
-/* General Layout */
+/* ===== Global Styles ===== */
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
+  background-color: #f8f8f8;
+  color: #111;
   display: flex;
   height: 100vh;
-  background: #fff;
-  color: #111;
 }
 
-/* Sidebar */
+/* ===== Sidebar ===== */
 aside {
   width: 220px;
-  background: #f5f5f5;
+  background: #fff;
   border-right: 1px solid #ddd;
-  padding: 2rem 1rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
 }
 
 aside h2 {
-  text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
+  color: #111;
 }
 
 aside ul {
@@ -30,79 +30,137 @@ aside ul {
 }
 
 aside li {
-  padding: 0.5rem;
-  margin-bottom: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 0.4rem;
+  border-radius: 6px;
   cursor: pointer;
-  border-radius: 4px;
-  transition: all 0.2s;
+  transition: background 0.2s ease;
 }
 
 aside li:hover {
+  background: #f0f0f0;
+}
+
+/* ===== Header/Toolbar ===== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #111;
+}
+
+.toolbar {
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* Grouped Text Tools */
+.text-tools {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.text-tools button,
+.text-tools select,
+.text-tools input[type="color"] {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem;
+  font-size: 1rem;
+}
+
+.text-tools button:hover,
+.text-tools select:hover {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+/* Action buttons (download, lock) */
+.note-actions {
+  display: flex;
+  gap: 0.4rem;
+  margin-left: 1rem;
+}
+
+.note-actions button {
+  background: none;
+  border: 1px solid #ddd;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.note-actions button:hover {
   background: #111;
   color: #fff;
 }
 
-/* Main Layout */
+/* ===== Main Editor Area ===== */
 main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
-/* Top Header Bar */
-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  background: #000;
-  color: #fff;
-  padding: 0.8rem 1.5rem;
-}
-
-.logo {
-  height: 32px;
-}
-
-.note-title {
-  border: none;
-  background: transparent;
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: bold;
-  flex: 1;
-}
-
-.note-title:focus {
-  outline: none;
-  border-bottom: 1px solid #fff;
-}
-
-/* Toolbar */
-.toolbar {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.toolbar button, .toolbar select, .toolbar input[type="color"] {
-  padding: 0.4rem;
-  border: none;
-  border-radius: 4px;
-  background: #fff;
-  color: #111;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.toolbar button:hover, .toolbar select:hover {
-  background: #ddd;
-}
-
-/* Editor */
 .editor {
   flex: 1;
-  padding: 2rem;
-  font-size: 1rem;
-  line-height: 1.6;
+  padding: 1.5rem;
+  margin: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
   overflow-y: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.editor p {
+  margin-bottom: 1rem;
+}
+
+/* ===== Buttons & Icons ===== */
+button {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* ===== Hover Effects ===== */
+button:hover {
+  background: #f0f0f0;
+}
+
+/* ===== Responsive Layout ===== */
+@media screen and (max-width: 768px) {
+  aside {
+    display: none;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toolbar {
+    margin-top: 0.5rem;
+  }
 }
