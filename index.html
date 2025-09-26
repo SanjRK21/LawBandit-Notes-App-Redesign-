@@ -10,15 +10,27 @@
 </head>
 <body>
   <!-- Sidebar -->
-  <aside>
-    <h2>Notebooks</h2>
-    <ul>
-      <li>Contracts</li>
-      <li>Torts</li>
-      <li>Property</li>
-      <li>Constitutional</li>
-    </ul>
-  </aside>
+  <aside class="sidebar">
+  <h2>Recent Notes</h2>
+  <ul>
+    <li>
+      <span class="note-title">Contract Draft</span>
+      <span class="note-time">2h ago</span>
+    </li>
+    <li>
+      <span class="note-title">Torts Outline</span>
+      <span class="note-time">Yesterday</span>
+    </li>
+    <li>
+      <span class="note-title">Property Review</span>
+      <span class="note-time">Sep 20</span>
+    </li>
+    <li>
+      <span class="note-title">Case Brief - Marbury v. Madison</span>
+      <span class="note-time">Sep 18</span>
+    </li>
+  </ul>
+</aside>
 
   <!-- Main Area -->
   <main>
@@ -26,19 +38,29 @@
     <header>
       <img src="lawbandit-logo.png" alt="LawBandit Logo" class="logo">
       <input type="text" value="Untitled Note" class="note-title" />
+
+      <!-- Toolbar -->
       <div class="toolbar">
-        <button title="Bold"><i class="fa-solid fa-bold"></i></button>
-        <button title="Italic"><i class="fa-solid fa-italic"></i></button>
-        <button title="Underline"><i class="fa-solid fa-underline"></i></button>
-        <select title="Format">
-          <option>Paragraph</option>
-          <option>Heading 1</option>
-          <option>Heading 2</option>
-        </select>
-        <button title="Bullet List"><i class="fa-solid fa-list-ul"></i></button>
-        <button title="Numbered List"><i class="fa-solid fa-list-ol"></i></button>
-        <input type="color" title="Text Color" />
-        <button title="Download"><i class="fa-solid fa-download"></i></button>
+        <!-- Text Tools -->
+        <div class="tool-group">
+          <button title="Bold"><i class="fa-solid fa-bold"></i></button>
+          <button title="Italic"><i class="fa-solid fa-italic"></i></button>
+          <button title="Underline"><i class="fa-solid fa-underline"></i></button>
+          <select title="Format">
+            <option>Paragraph</option>
+            <option>Heading 1</option>
+            <option>Heading 2</option>
+          </select>
+          <button title="Bullet List"><i class="fa-solid fa-list-ul"></i></button>
+          <button title="Numbered List"><i class="fa-solid fa-list-ol"></i></button>
+          <input type="color" title="Text Color" />
+        </div>
+
+        <!-- Actions -->
+        <div class="tool-group">
+          <button title="Download"><i class="fa-solid fa-download"></i></button>
+          <button title="Make Public/Private"><i class="fa-solid fa-lock"></i></button>
+        </div>
       </div>
     </header>
 
