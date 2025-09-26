@@ -2,26 +2,26 @@
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
-  background-color: #f8f8f8;
+  background-color: #f5f5f5;
   color: #111;
   display: flex;
   height: 100vh;
+  overflow: hidden;
 }
 
 /* ===== Sidebar ===== */
 aside {
   width: 220px;
   background: #fff;
-  border-right: 1px solid #ddd;
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
+  box-shadow: 4px 0 15px rgba(0,0,0,0.05);
 }
 
 aside h2 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin-bottom: 1rem;
-  color: #111;
 }
 
 aside ul {
@@ -31,14 +31,17 @@ aside ul {
 
 aside li {
   padding: 0.6rem 0.8rem;
-  margin-bottom: 0.4rem;
-  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.3s ease;
+  color: #111;
 }
 
 aside li:hover {
-  background: #f0f0f0;
+  background: #e5e5e5;
+  transform: translateX(5px);
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
 }
 
 /* ===== Header/Toolbar ===== */
@@ -46,49 +49,54 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1rem;
   background: #fff;
   border-bottom: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 1.3rem;
+  font-weight: 700;
+  font-size: 1.5rem;
   color: #111;
 }
 
 .toolbar {
   display: flex;
   gap: 0.6rem;
+  background: #f9f9f9;
+  padding: 0.4rem 0.6rem;
+  border-radius: 12px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
 }
 
 /* Grouped Text Tools */
 .text-tools {
   display: flex;
-  gap: 0.4rem;
-  padding: 0.3rem 0.5rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  background: #fff;
+  gap: 0.5rem;
 }
 
 .text-tools button,
 .text-tools select,
 .text-tools input[type="color"] {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.3rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.3rem 0.5rem;
   font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .text-tools button:hover,
-.text-tools select:hover {
-  background: #f0f0f0;
-  border-radius: 4px;
+.text-tools select:hover,
+.text-tools input[type="color"]:hover {
+  background: #e0e0e0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transform: translateY(-1px);
 }
 
 /* Action buttons (download, lock) */
@@ -99,17 +107,20 @@ header {
 }
 
 .note-actions button {
-  background: none;
+  background: #fff;
   border: 1px solid #ddd;
   padding: 0.4rem 0.6rem;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
 }
 
 .note-actions button:hover {
   background: #111;
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* ===== Main Editor Area ===== */
@@ -117,27 +128,31 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding: 1rem;
 }
 
 .editor {
   flex: 1;
-  padding: 1.5rem;
-  margin: 1rem;
+  padding: 2rem;
+  margin-top: 1rem;
   background: #fff;
-  border-radius: 8px;
+  border-radius: 16px;
   border: 1px solid #ddd;
   overflow-y: auto;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: 8px 8px 20px rgba(0,0,0,0.03), -8px -8px 20px rgba(255,255,255,0.7);
 }
 
 .editor p {
   margin-bottom: 1rem;
+  line-height: 1.6;
 }
 
 /* ===== Buttons & Icons ===== */
 button {
   font-size: 1rem;
   cursor: pointer;
+  background: none;
+  border: none;
 }
 
 button:focus {
@@ -146,7 +161,8 @@ button:focus {
 
 /* ===== Hover Effects ===== */
 button:hover {
-  background: #f0f0f0;
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
 }
 
 /* ===== Responsive Layout ===== */
